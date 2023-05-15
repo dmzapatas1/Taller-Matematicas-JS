@@ -33,6 +33,14 @@ function carcularT(ladoA, ladob, base, alt){
   }
 }
 
+function calcularAltT(lado1,base){
+  if(lado1==base){
+    console.warn('este no es un triangulo isosceles')
+  }else{
+    return Math.sqrt((lado1**2)-((base**2))/4)
+  }
+}
+
 console.log({
   ladoTa,
   ladoTb,
@@ -43,3 +51,22 @@ console.log({
 })
 
 console.groupEnd('Triangulo')
+
+console.group('Circulo')
+const radioC = 3
+
+
+function calcularC(radio){
+  const radioalCuadrado= Math.pow(radio,2)
+  return {
+    circunferencia:(2*radio)*Math.PI ,
+    area:radioalCuadrado*Math.PI
+  }
+}
+console.log(calcularC(3))
+console.groupEnd('Circulo')
+
+console.group('porcentajes')
+
+console.groupEnd('porcentajes')
+
