@@ -8,12 +8,16 @@
 </head>
 <body>
   <h1>Como calcular los precios de descuento</h1>
-  <label>Precio Original de tu producto:</label>
+  <br>
+  <label for="price">Precio Original de tu producto:</label>
   <input id="price" type="number"/>
-  <label>descuento:</label>
+  <label for="descuento">descuento de tu producto:</label>
   <input id="discount" type="number"/>
-
-  <button id="calcular">Calcular descuento</button>
+  <button id="calcular">Calcular descuento con porcentaje</button>
+  <br>
+  <label for="cupon"> Usa tu cupón:</label>
+  <input id="cupon" type="text"/>
+  <button id="calcularC">Calcular descuento con cupón</button>
   <p id="result"></p>
   <script src="./descuentos.js"></script>
 </body>
