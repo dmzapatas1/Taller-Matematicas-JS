@@ -1,5 +1,7 @@
 
-function calcularP(lista){
+PlatziMath = {}
+
+PlatziMath.calcularP = function calcularP(lista){
   // let sumaL = 0
   // for (let i=0; i<lista.length;i++){
   //   sumaL = sumaL + lista[i]
@@ -13,21 +15,22 @@ function calcularP(lista){
 const P= sumaL/ lista.length
 return P
 }
-function esPar(lista){
+
+PlatziMath.esPar = function esPar(lista){
   return !(lista.length % 2)
 }
-function esImpar(lista){
+PlatziMath.esImpar = function esImpar(lista){
   return (lista.length % 2)
 }
 
-function calcularMediana(lista){
-  const listaOrd = lista.sort()
-  const listaEsPar = esPar(listaOrd)
+PlatziMath.calcularMediana = function calcularMediana(lista){
+  const listaOrd = lista.sort((a,b)=>(a-b))
+  const listaEsPar = PlatziMath.esPar(listaOrd)
   console.log(listaOrd)
   if (listaEsPar){
     const index1 = (listaOrd.length/2)-1
     const index2 = listaOrd.length/2
-    return calcularP([listaOrd[index1], listaOrd[index2]])
+    return PlatziMath.calcularP([listaOrd[index1], listaOrd[index2]])
 
   }else{
    const medianaImpar = Math.floor(listaOrd.length/2)
@@ -35,7 +38,7 @@ function calcularMediana(lista){
   }
 }
 
-function calcularModa(lista){
+PlatziMath.calcularModa = function calcularModa(lista){
   const listaCount = {};
 
   for(let i=0; i<lista.length; i++){
@@ -55,14 +58,36 @@ function calcularModa(lista){
   //console.log({listaCount, listaArray, listaO, listaLastItem})
   const moda = listaLastItem[0]
   //console.log('la moda es '+ listaLastItem[0])
+  function solution(){
+    const listaX = {
+      123: "dani",
+      234: "meli"
+    }
+  
+    console.log(listaX)
+  }
+  
   return moda
+
+  
 }
 
-function ordenarListaBi(lista,i){
+PlatziMath.ordenarListaBi = function ordenarListaBi(lista,i){
   function ordenarListaSort(valorAcumulado, nuevoValor){
     return valorAcumulado[i]-nuevoValor[i]
   }
  const listaA = lista.sort(ordenarListaSort)
 
  return listaA
+}
+
+function solution(lista){
+  const listaX = Object.entries(lista)
+  let ar =[]
+  const a= listaX.forEach(element => {
+    ar.push({id: element[0],
+      name : element[1]
+      })
+  })
+  return ar
 }
