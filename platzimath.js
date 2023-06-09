@@ -23,10 +23,10 @@ PlatziMath.esImpar = function esImpar(lista){
   return (lista.length % 2)
 }
 
-PlatziMath.calcularMediana = function calcularMediana(lista){
+PlatziMath.calcularMediana = function calcularMediana(lista){                               
   const listaOrd = lista.sort((a,b)=>(a-b))
   const listaEsPar = PlatziMath.esPar(listaOrd)
-  console.log(listaOrd)
+  //console.log(listaOrd)
   if (listaEsPar){
     const index1 = (listaOrd.length/2)-1
     const index2 = listaOrd.length/2
